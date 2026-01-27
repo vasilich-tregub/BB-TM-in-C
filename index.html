@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            font-size: 150%;
+        }
+
+        #log {
+            height: 100px;
+            overflow: scroll;
+            padding: 0.5rem;
+            border: 1px solid black;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <title>Busy Beavers in C language</title>
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon128.png">
+    <script src="cc-bb.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <th> </th>
+                <th>  </th>
+                <th>  </th>
+                <th>  </th>
+                <th>  </th>
+                <th>  </th>
+                <th title="From https://bbchallenge.org/1RB0LD_0RC1RB_1RD1RF_0LE1LD_1LA1LE_---0RB">F(BB)<input type="radio" name="lastState" value="6BB" /></th>
+            </tr>
+            <tr>
+                <th> </th>
+                <th>A <input type="radio" name="lastState" value="1" /></th>
+                <th>B <input type="radio" name="lastState" value="2" /></th>
+                <th>C <input type="radio" name="lastState" value="3" /></th>
+                <th>D <input type="radio" name="lastState" value="4" /></th>
+                <th>E <input type="radio" name="lastState" value="5" /></th>
+                <th>F <input type="radio" name="lastState" value="6" title="Wikipedia, Busy_Beavers" /></th>
+            </tr>
+            <tr>
+                <th>0 </th>
+                <td><input name="stateCodes" id="idState0A" maxlength="3" size="3" value="1RB" onchange="ruleChanged(this)" /></td>
+                <td><input name="stateCodes" id="idState0B" maxlength="3" size="3" value="1RC" onchange="ruleChanged(this)" /></td>
+                <td><input name="stateCodes" id="idState0C" maxlength="3" size="3" value="1LC" onchange="ruleChanged(this)" /></td>
+                <td><input name="stateCodes" id="idState0D" maxlength="3" size="3" value="0LE" onchange="ruleChanged(this)" /></td>
+                <td><input name="stateCodes" id="idState0E" maxlength="3" size="3" value="1LF" onchange="ruleChanged(this)" /></td>
+                <td><input name="stateCodes" id="idState0F" maxlength="3" size="3" value="0RC" onchange="ruleChanged(this)" /></td>
+            </tr>
+            <tr>
+                <th>1 </th>
+                <td><input name="stateCodes" id="idState1A" maxlength="3" size="3" value="0LD" onchange="ruleChanged(this)" /></td>
+                <td><input name="stateCodes" id="idState1B" maxlength="3" size="3" value="0RF" onchange="ruleChanged(this)" /></td>
+                <td><input name="stateCodes" id="idState1C" maxlength="3" size="3" value="1LA" onchange="ruleChanged(this)" /></td>
+                <td><input name="stateCodes" id="idState1D" maxlength="3" size="3" value="1RH" onchange="ruleChanged(this)" /></td>
+                <td><input name="stateCodes" id="idState1E" maxlength="3" size="3" value="0RB" onchange="ruleChanged(this)" /></td>
+                <td><input name="stateCodes" id="idState1F" maxlength="3" size="3" value="0RE" onchange="ruleChanged(this)" /></td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <button id="idStartCcTM" onclick="runCcTM()">Start C TM</button>
+        <!--button onclick="stopTM()">Stop TM</!button-->
+        Performance (ms): <input id="idPerf" />
+    </div>
+    <div id="idShifts"></div>
+    <div>Expand textarea:<input type="checkbox" onclick="textareaSize(this)" /></div>
+    <textarea id="idTapeDisplay"></textarea>
+</body>
+</html>
